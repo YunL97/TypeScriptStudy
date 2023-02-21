@@ -52,3 +52,17 @@ enum Role {
   READ_ONLY, AUTHOR
 }
 ```
+* Any타입: Any는 어떤 값이나 종류의 데이터가 어디에 저장될지 전혀 알 수 없는경우에 대비하거나, 런타임 검사를 수행하는 경우 런타임 도중 특정 값에 수행하고자 하는 작업의 범위를 좁히기 위해 any를 사용하면된다, 그외는 쓰지 않는편이 좋음
+* 여러가지 타입 쓰는법
+  ```
+  function a(input1: number| string, resultConversion === 'as-number' | 'as-string'){
+    if(typeof input1 === 'number'){
+
+    }
+  }
+  ```
+  * 타입 얼라이어스: 
+  ```
+  type Combinable = number | string;
+  type ConversionDescriptor = 'as-nubmer' | 'as-text';
+  ```
