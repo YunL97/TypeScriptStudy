@@ -66,3 +66,33 @@ enum Role {
   type Combinable = number | string;
   type ConversionDescriptor = 'as-nubmer' | 'as-text';
   ```
+  * 페이지 들어왔을때 웹인지, 모바일인지 확인하는 코드
+```
+//모바일이면 true 반환
+export const isMobile = () => {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+}
+```
+* 함수 리턴타임
+```
+function add(n1: number, n2:number): number {
+  return n1 + n2;
+
+}
+```
+* undefined 는 타입스크립트에서는 타입이다 -> 실제 값을 반환 하지 않을 때 사용 -> 매우 드문경우 사용
+```
+function add(n1: number, n2:number): undefined {
+  return;
+
+}
+```
+* 일반적으로 반환값이 없을때는 void 사용
+
+```
+let a: Function; //이렇게 하면 리턴값이 없으면 오류남
+let a: () => number; //이렇게 함수형으로 바꾸면 됨
+
+```
+* 함수만 받을 수 있음
+*  
