@@ -61,12 +61,21 @@ enum Role {
     }
   }
   ```
-  * 타입 얼라이어스: 
+  * 유니온 타입: 
   ```
   type Combinable = number | string;
   type ConversionDescriptor = 'as-nubmer' | 'as-text';
   ```
-  * 페이지 들어왔을때 웹인지, 모바일인지 확인하는 코드
+* 타입 얼라이어스:
+```
+  // 타입 앨리어스
+type Person = {
+  name: string,
+  age?: number
+}
+
+```
+* 페이지 들어왔을때 웹인지, 모바일인지 확인하는 코드
 ```
 //모바일이면 true 반환
 export const isMobile = () => {
@@ -95,4 +104,4 @@ let a: () => number; //이렇게 함수형으로 바꾸면 됨
 
 ```
 * 함수만 받을 수 있음
-*  
+* 리턴값이 never: 리턴타입이 never가 사용되는 경우 항상 오류를 출력하거나 리턴값을 절대로 보내지 않음을 의미
