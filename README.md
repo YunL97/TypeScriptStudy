@@ -113,5 +113,23 @@ let a: () => number; //이렇게 함수형으로 바꾸면 됨
 * tsconfig.json 에서 주석처리되있는거는 그거는 기본으로 설정하겠다는뜻 -> 주석을 풀면 내가 직접 설정을 해줘야함
 * tsconfig.json sourceMap: 디버깅작업과 개발에 유용, true로 두면 source에 타입스크립트도 올라가는데, 브레이크 포인트를 두면 그 코드를 지나갈때 정지 하는데 아주 편리한 기능, 이 기능은 디버깅 프로세스를 한단계 향상시켜준다
 * noEmitOnError: 타입스크립트에 문제가 있ㄴ느경우 true를 넣으면 문제가 되는 파일이 다시 생성되지 않음 -> 타입스크립트 파일에 에러가 있는 경우 자바스크립트 파일을 가져오고 싶지 않은 경우에 설정
-* 
-* 
+* var를 안쓰고 let를 사용하는이유: 하위 범위내에서만 그 변수를 사용하고싶기 때문
+* 나머지 매개변수 사용법
+```
+const add = (...numbers: number[]) => {
+  return numbers.reduce((curResult, curValue) => {
+    return curResult + curValue;
+  }, 0);
+}
+
+const addedNumbers = add(5,10,2,3.7);
+
+//튜플로 지정하고 싶을떄
+const add = (...numbers: number[number, number, number]) => {
+  return numbers.reduce((curResult, curValue) => {
+    return curResult + curValue;
+  }, 0);
+}
+
+const addedNumbers = add(5,10,2);
+```
