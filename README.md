@@ -141,3 +141,17 @@ const addedNumbers = add(5,10,2);
   [c,d, ...나머지] = a;
   
 ```
+* 클래스
+```
+class A{
+  name:string;
+
+  constructor(n: string) { //초기화작업
+    this.name = n;
+
+  }
+}
+
+let b = new a('AAA');
+
+```
