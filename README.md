@@ -155,3 +155,37 @@ class A{
 let b = new a('AAA');
 
 ```
+```
+class A {
+  name: String;
+  constructor(n: stirng){
+    this.name = n;
+  }
+  describe() {
+    console.log('a' + this.name);
+  }
+}
+
+const accounting = new Department('Acconting');
+
+accounting.describe(); //aAccounting
+
+const b = {describe.describe};
+b.describe(); //undefined 이 나오는데 그이유가  객체리터럴로 생성되기 때문, 클래스나 정의된 특정 클래스를 기반으로 하지 않고 더미객체로 생성되기때문이다. 사실상 describe로 함수자체를 전달
+
+//그래서 describe 를 변경해야함
+describe(this: A){
+  console.log('a' + this.name);
+}
+
+const b = {name:'s', describe.describe}; 
+b.describe(); //as 가 찍힘
+```
+* 클래스에서 필드에 뭐 안써있으면 public가 기본
+* 생성자 받을 때 접근제한자를 지정해줄 수 있음
+```
+constructor(pricate id: string, public n: string){
+
+}
+```
+* readonly: 데이터가 변경되는것을 막으려고 할때 사용, 자바스크립트에는 없는 기능
