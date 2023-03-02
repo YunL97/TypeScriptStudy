@@ -189,3 +189,27 @@ constructor(pricate id: string, public n: string){
 }
 ```
 * readonly: 데이터가 변경되는것을 막으려고 할때 사용, 자바스크립트에는 없는 기능
+* proteced: 이클래스에서뿐 아니라 이클래스를 확장하는 모든클래스에서 사용가능, 접근은 가능한데 외부에서 변경불가능.
+* private 쓸때는 getter, setter 사용하면됨
+* get 사용할때는 메소드로서가 아닌 일반 속성으로 접근해야함
+```
+class A{
+  private a: string;
+
+  get getA() {
+    if(this.a){
+      return this.a;
+    }
+    throw new Error('no report found');
+  }
+  set setA(value :string) {
+    this.a = value;
+  }
+}
+let b = A();
+
+b.setA('ccc');
+var c = b.getA;
+
+```
+* get, set 는 로직을 캡슐화하는데 유용하다.
