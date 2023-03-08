@@ -298,4 +298,16 @@ interface Bird{
 }
 ```
 * 리터럴: 데이터 그자체를 의미
-*  
+* 형변환: 타입스크립트가 직접 감지하지 못하는 특정 타입의 값을 타입스크립트에 알려주는 역할을 한다. 
+```
+var a = <HTMLInputElement>document.getElementById('id네임');
+a.value = 'asd';
+//or 위아래가 같음
+var a = <HTMLInputElement>document.getElementById('id네임') as HTMLInputElement;
+```
+* 느낌표: null을 반환하지 않을것이라는 확신이 들때 사용, 아니면 if문사용하면됨
+```
+if(a){
+  (a as HTMLInputElement).value = 'asd';
+}
+```
