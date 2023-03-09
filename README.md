@@ -311,3 +311,23 @@ if(a){
   (a as HTMLInputElement).value = 'asd';
 }
 ```
+* 인덱스 속성: 인터페이스 같은거 구조짤때 사용하는듯?
+```
+interface ErrorContainer {
+  [prop: string]: string;
+}
+
+const errorBag: ErrorConatiner = {
+  email: 'not a valid email'
+}
+```
+* 함수오버로드: 동일한 함수에 대해 여러 함수 시그니처를 정의할 수 있는 기능 => 다양한 매개변수를 지닌 함수를 호출하는 여러가지 가능한 방법을 사용해서 함수 내에서 작업을 수행할 수 있게해준다.
+```
+function add(n: number): string;
+function add(a: number, b: number): number;
+function add(a: number|string, b: number|boolean) {
+
+}
+
+
+```
