@@ -328,6 +328,12 @@ function add(a: number, b: number): number;
 function add(a: number|string, b: number|boolean) {
 
 }
-
-
+```
+* 옵셔널 체이닝: 데이터를 가져오지 못하는경우를 대비가능, 데이터가 들어있지않으면 undefined 반환, 함수호출에도 사용가능
+```
+const result = user?.getName?.();
+```
+* null 병합: ?? 앞의 값이 null이나 undefined면 'asd' 로 값을 넣어준다
+```
+const a = null ?? 'asd';
 ```
