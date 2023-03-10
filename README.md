@@ -321,7 +321,7 @@ const errorBag: ErrorConatiner = {
   email: 'not a valid email'
 }
 ```
-* 함수오버로드: 동일한 함수에 대해 여러 함수 시그니처를 정의할 수 있는 기능 => 다양한 매개변수를 지닌 함수를 호출하는 여러가지 가능한 방법을 사용해서 함수 내에서 작업을 수행할 수 있게해준다.
+* 함수오버로드: 동일한 함수에 대해 여러 함수 시그니처를 정의할 수 있는 기능 => 다양한 매개변수를 지닌 함수를 호출하는 여러가지 가능한 방법을 사용해서 함수 내에서 작업을 수행할 수 있게해준다. -> 리턴타입 확실하게 적용해 줄 수 있음
 ```
 function add(n: number): string;
 function add(a: number, b: number): number;
