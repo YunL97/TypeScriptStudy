@@ -337,3 +337,24 @@ const result = user?.getName?.();
 ```
 const a = null ?? 'asd';
 ```
+* 제네릭: 제네릭 타입 정보를 사용하면 보다 나은 타입 안정성 확보가능, 구체적인 타입이 아니기 때문에 어떤 객체든 입력할 수 있어서 타입스크립트가 두 객체의 인터섹션이 반환 된다는것을 추론가능
+```
+function a<T, U>(oba: T, obb: U): T & U  {
+  ruturn Object.assign(oba, obb);
+}
+```
+* 제네릭타입 제약 주는법: 
+```
+function a<T extends pbject, U>(oba: T, obb: U): T & U  {
+  ruturn Object.assign(oba, obb);
+}
+```
+* Lengthy: 타입스크립트에서 사용되는 유니온타입중 하나, length프로퍼티가 있는 타입을 의미
+* keyof: 인터페이스나 타입의 속성 이름들을 유니온 타입으로 반환, 해당 타입으 속성 이름을 추출하거나 타입안에서 해당속성을 참조 가능
+```
+function a<T extends object, U extends keyof T>(obj: T, key: U){
+  return 'value: ' + obj[key];
+}
+
+a({name: 'a', 'name'});
+```
