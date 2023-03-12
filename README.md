@@ -358,3 +358,16 @@ function a<T extends object, U extends keyof T>(obj: T, key: U){
 
 a({name: 'a', 'name'});
 ```
+* 제네릭 클래스: 공통 클래스를 마들 때 사용, 근데 객체 같은거 넣으면 참조타입이기때문에 내가 생각한것과 드르게 결과가 나올 수있다.
+```
+class A<T extends string | number | boolean>{
+  private date: T[] = [];
+}
+
+const b = new A<string>();
+
+```
+* 제네릭 타입은 작업을 쉽게 수행할 수 있게 해주며 완벽한 유연성의 조화를 제공
+* Partial: 인터페이스 Partial<인터페이스이름> 써주면 다 옵셔널로 바뀜
+* 유니온 타입은 모든 메소드 호출이나 모든 함수 호출마다 다른 타입을 지정하고자 하는경우에 유용
+* 제네릭 타입은 한타입으로 고정
