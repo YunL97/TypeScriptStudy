@@ -371,3 +371,48 @@ const b = new A<string>();
 * Partial: 인터페이스 Partial<인터페이스이름> 써주면 다 옵셔널로 바뀜
 * 유니온 타입은 모든 메소드 호출이나 모든 함수 호출마다 다른 타입을 지정하고자 하는경우에 유용
 * 제네릭 타입은 한타입으로 고정
+* 데코레이터 : 제네릭보다 상급인 특성
+```
+function Logger(constructor: Function){
+  console.log('logging');
+  console.log(construecor);
+}
+
+@Logger
+class A{
+  name="a";
+
+  constructor() {
+    console.log('b');
+  }
+}
+
+const a = new A();
+//결과
+logging
+class A{
+  name="a";
+
+  constructor() {
+    console.log('b');
+  }
+}
+b
+```
+*  데코레이터 팩토리: 데코레이터함수를 반환하는 함수, 클래스, 메서드, 속성등의 데코레이션 대상에 적용되는함수
+```
+function myDecoratorFactory(message: string) {
+  return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    console.log(message);
+    return descriptor;
+  }
+}
+
+class MyClass {
+  @myDecoratorFactory('Hello, world!')
+  myMethod() {
+    // ...
+  }
+}
+```
+*
