@@ -415,4 +415,25 @@ class MyClass {
   }
 }
 ```
-*
+* 데코레이터는 밑에서 위로 실행: B 실행, A실행
+```
+@A()
+@B()
+class C {
+
+}
+```
+* 속성 데코레이터: 
+```
+function Log(target: any, propertyName: string | Symbol){
+  console.log('a')
+  console.log(target, propertyNAme)
+}
+class A{
+@Log
+title: string
+}
+//결과 
+//a
+//{constructor: f, getPriceWithTax: f}  " title"
+```
