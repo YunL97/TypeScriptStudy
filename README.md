@@ -220,12 +220,14 @@ var c = b.getA;
 *  추상메소드: 이 메소드의 형태와 메소드의 구조가 어떤것인지를 정의만 하고있을 뿐 그 외에는 아무것도 정의x
 *  싱글톤 사용법: privatestatic instance: 클래스이름 쓰고
 ```
+class 클래스이름{
  public static getInstance() {
-  if(클래스이름.instance){
+  if(!클래스이름.instance){
     클래스이름.instance = new 클래스이름();
   }
   return 클래스이름.instance;
  }
+}
  ```
  * 인터페이스: 객체의 구조를 설명,사용자 정의 타입으로 사용할뿐, 이 구조를 가져야하는 객체에 대한 타입을 확인하는 타입으로 사용가능
 ```
