@@ -437,3 +437,16 @@ title: string
 //a
 //{constructor: f, getPriceWithTax: f}  " title"
 ```
+* addEventListener 같은거 사용할 때 클래스 안에있는 this를 불러올라고하면 undefined를 가져오기 때문에 bind로 묶어야한다
+```
+const p = new Pronter();
+const button = document.querySelector('button')!;
+button.addEventListener('click', p.showMessage.bind(p));
+```
+* !! 비-널연산자: 데이터를  boolean으로 바꿀때 사용
+```
+var a = "test";	      //a: "test" (조건문 적용시 true)
+var b = !"test";      //b: false
+var c = !!"test";     //c: true
+```
+* 
