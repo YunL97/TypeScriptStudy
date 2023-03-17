@@ -441,7 +441,7 @@ title: string
 ```
 * addEventListener 같은거 사용할 때 클래스 안에있는 this를 불러올라고하면 undefined를 가져오기 때문에 bind로 묶어야한다
 ```
-const p = new Pronter();
+const p = new Printer();
 const button = document.querySelector('button')!;
 button.addEventListener('click', p.showMessage.bind(p));
 ```
