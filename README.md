@@ -451,4 +451,4 @@ var a = "test";	      //a: "test" (조건문 적용시 true)
 var b = !"test";      //b: false
 var c = !!"test";     //c: true
 ```
-* 
+* 사용자정의 타입을 사용하면 타이핑을 향상시킬 수 있다.
