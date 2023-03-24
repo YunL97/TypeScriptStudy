@@ -472,3 +472,4 @@ export namespace CommonModel {
 * 웹팩을 사용하지않으면 http요청의 양만으로 인해 다량의 대기시간이 발생하고 프로젝트가 느려질 수 있다.
 * 웹팩은 묶고(bundling), 빌드하고(building), 종합(orchestration)하는 도구
 * //158부터
+* 웹팩을 사용할 때 mode: 'production' 으로 놓으면 최적화, 코드경량화등을 지시한다
