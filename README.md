@@ -473,3 +473,5 @@ export namespace CommonModel {
 * 웹팩은 묶고(bundling), 빌드하고(building), 종합(orchestration)하는 도구
 * //158부터
 * 웹팩을 사용할 때 mode: 'production' 으로 놓으면 최적화, 코드경량화등을 지시한다
+* 현대 웹개발에서 일반적으로는 서드파티 라이버르리를 이용해서 개발을 한다
+* 
