@@ -474,4 +474,5 @@ export namespace CommonModel {
 * //158부터
 * 웹팩을 사용할 때 mode: 'production' 으로 놓으면 최적화, 코드경량화등을 지시한다
 * 현대 웹개발에서 일반적으로는 서드파티 라이버르리를 이용해서 개발을 한다
+* 스프링의 어노테이션같은게 일반적으로 많구나 -> flutter jsonserializable패키지, 타입스크립트 데코레이터나 벨리데이터 같은거 다비슷하네
 * 
