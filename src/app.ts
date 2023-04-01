@@ -1,43 +1,16 @@
-import axios from "axios";
+import express, { Request, Response, NextFunction } from 'express';
+import { json } from 'body-parser';
 
-const form = document.querySelector("form")!;
-const addressInput = document.getElementById("address")! as HTMLInputElement;
+import todoRoutes from './routes/todos';
 
-const GOOGLE_API_KEY = "AIzaSyCIaAc2c5M3VpbCH6PPq_guwy9lHuowXOs";
+const app = express();
 
-// declare var google: any;
+app.use(json());
 
-type GoogleGeocodingResponse = {
-  results: { geometry: { location: { lat: number; lng: number } } }[];
-  status: "OK" | "ZERO_RESULTS";
-};
+app.use('/todos', todoRoutes);
 
-function searchAddressHandler(event: Event) {
-  event.preventDefault();
-  const enteredAddress = addressInput.value;
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  res.status(500).json({ message: err.message });
+});
 
-  axios
-    .get<GoogleGeocodingResponse>(
-      `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(
-        enteredAddress
-      )}&key=${GOOGLE_API_KEY}`
-    )
-    .then(response => {
-      if (response.data.status !== "OK") {
-        throw new Error("Could not fetch location!");
-      }
-      const coordinates = response.data.results[0].geometry.location;
-      const map = new google.maps.Map(document.getElementById("map"), {
-        center: coordinates,
-        zoom: 16
-      }); 
-
-      new google.maps.Marker({ position: coordinates, map: map });
-    })
-    .catch(err => {
-      alert(err.message);
-      console.log(err);
-    });
-}
-
-form.addEventListener("submit", searchAddressHandler);
+app.listen(3000);
