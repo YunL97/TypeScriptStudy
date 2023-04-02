@@ -487,4 +487,4 @@ export namespace CommonModel {
 * 서드파티라이브러리 nodemon을 사용하면 서버코드를변경할때마다 자동으로 해준다.
 * express에서 req.body(RequestHandler)를 사용할 때 타입캐스팅을해줘야한다. 타입스크립트는 any로 인식하기때문 => req.body as {text: string} 
 * body-parser 서드파티라이브러리: 제 3자 패키지에서 들어오는 요청들은 전부 파싱하는 미들웨어
-* 
+* nodejs + 타입스크립트를 섞은 nest.js를 사용하는게 좋음 -> 데코레이터같은것들을 기본적으로 제공
